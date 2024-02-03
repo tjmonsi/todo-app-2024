@@ -1,0 +1,22 @@
+{
+  "name": "todo-app-2024",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "This is a todo app for 2024",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TJ Monserrat",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@fastify/swagger": "^8.14.0",
+    "@scalar/fastify-api-reference": "^1.14.8",
+    "fastify": "^4.26.0",
+    "fastify-openapi-glue": "^4.4.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
