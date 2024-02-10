@@ -5,20 +5,8 @@ export const home = {
       description: 'Getting the home data',
       operationId: 'home',
       responses: {
-          200: {
-          description: 'OK',
-          content: {
-              'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  success: { 
-                    type: 'boolean' 
-                  }
-                }
-              }
-            }
-          }
+        200: {
+          $ref: '#/components/responses/successResponse'  
         }
       }
     }

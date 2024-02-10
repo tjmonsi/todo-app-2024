@@ -5,7 +5,7 @@
   "description": "This is a todo app for 2024",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon index.js | pino-pretty",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "TJ Monserrat",
@@ -17,6 +17,7 @@
     "fastify-openapi-glue": "^4.4.3"
   },
   "devDependencies": {
-    "nodemon": "^3.0.3"
+    "nodemon": "^3.0.3",
+    "pino-pretty": "^10.3.1"
   }
 }

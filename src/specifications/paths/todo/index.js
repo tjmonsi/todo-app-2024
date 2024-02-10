@@ -6,20 +6,8 @@ export const todo = {
       description: 'Get many todo data point',
       operationId: 'getManyTodo',
       responses: {
-          200: {
-          description: 'OK',
-          content: {
-              'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  success: { 
-                    type: 'boolean' 
-                  }
-                }
-              }
-            }
-          }
+        200: {
+          $ref: '#/components/responses/todoManyResponse'
         }
       }
     },
@@ -28,21 +16,12 @@ export const todo = {
       summary: 'Create one todo',
       description: 'Create one todo data point',
       operationId: 'createTodo',
+      requestBody: {
+        $ref: '#/components/requestBodies/todoCreateRequest'
+      },
       responses: {
-          200: {
-          description: 'OK',
-          content: {
-              'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  success: { 
-                    type: 'boolean' 
-                  }
-                }
-              }
-            }
-          }
+        200: {
+          $ref: '#/components/responses/todoResponse'
         }
       }
     },
@@ -55,29 +34,12 @@ export const todo = {
       operationId: 'getTodo',
       parameters: [
         {
-          name: 'todoId',
-          in: 'path',
-          required: true,
-          schema: {
-            type: 'string'
-          }
+          $ref: '#/components/parameters/todoId'
         }
       ],
       responses: {
-          200: {
-          description: 'OK',
-          content: {
-              'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  success: { 
-                    type: 'boolean' 
-                  }
-                }
-              }
-            }
-          }
+        200: {
+          $ref: '#/components/responses/todoResponse'
         }
       }
     },
@@ -88,29 +50,12 @@ export const todo = {
       operationId: 'updateTodo',
       parameters: [
         {
-          name: 'todoId',
-          in: 'path',
-          required: true,
-          schema: {
-            type: 'string'
-          }
+          $ref: '#/components/parameters/todoId'
         }
       ],
       responses: {
-          200: {
-          description: 'OK',
-          content: {
-              'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  success: { 
-                    type: 'boolean' 
-                  }
-                }
-              }
-            }
-          }
+        200: {
+          $ref: '#/components/responses/todoResponse'
         }
       }
     },
@@ -130,20 +75,8 @@ export const todo = {
         }
       ],
       responses: {
-          200: {
-          description: 'OK',
-          content: {
-              'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  success: { 
-                    type: 'boolean' 
-                  }
-                }
-              }
-            }
-          }
+        200: {
+          $ref: '#/components/responses/todoResponse'
         }
       }
     }

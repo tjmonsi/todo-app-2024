@@ -1,0 +1,18 @@
+export const todoManyResponse = {
+  description: 'Success response',
+  content: {
+    'application/json': {
+      schema: {
+        type: 'object',
+        properties: {
+          success: {
+            $ref: '#/components/schemas/success'
+          },
+          data: {
+            $ref: '#/components/schemas/todoList'
+          }
+        }        
+      }
+    }
+  }
+}
