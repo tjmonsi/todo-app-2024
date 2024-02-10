@@ -18,12 +18,7 @@ export async function build () {
   });
 
   await fastify.register(apiRef, {
-    routePrefix: '/docs',
-    configuration: {
-      spec: {
-        content: () => fastify.swagger()
-      }
-    }
+    routePrefix: '/docs'
   })
 
   await fastify.register(openApiGlue, options);
