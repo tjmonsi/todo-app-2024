@@ -11,6 +11,7 @@
   "author": "TJ Monserrat",
   "license": "Apache-2.0",
   "dependencies": {
+    "@fastify/sensible": "^5.5.0",
     "@fastify/swagger": "^8.14.0",
     "@google-cloud/firestore": "^7.3.0",
     "@scalar/fastify-api-reference": "^1.14.8",

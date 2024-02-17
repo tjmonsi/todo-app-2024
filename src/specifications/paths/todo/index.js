@@ -40,11 +40,21 @@ export const todo = {
       responses: {
         200: {
           $ref: '#/components/responses/todoResponse'
+        },
+        404: {
+          description: 'Todo not found',
+          content: {
+            'text/plain': {
+              schema: {
+                type: 'string'
+              }
+            }
+          }
         }
       }
     },
     // UPDATE ONE TODO USING THE PUT METHOD USING THE todoId AS PARAMETER
-    put: {
+    patch: {
       summary: 'Update one todo',
       description: 'Update todo data point',
       operationId: 'updateTodo',
@@ -53,6 +63,9 @@ export const todo = {
           $ref: '#/components/parameters/todoId'
         }
       ],
+      requestBody: {
+        $ref: '#/components/requestBodies/todoUpdateRequest'
+      },
       responses: {
         200: {
           $ref: '#/components/responses/todoResponse'

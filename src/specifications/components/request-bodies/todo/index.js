@@ -3,7 +3,7 @@ export const todoGroup = {
     content: {
       'application/json': {
         schema: {
-          $ref: '#/components/schemas/userSubmittedTodo'
+          $ref: '#/components/schemas/userCreatedTodo'
         }
       }
     }

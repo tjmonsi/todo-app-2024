@@ -9,6 +9,7 @@ export async function getTodo (request, response) {
   
   if (!doc.exists) {
     // return an error
+    return response.notFound('Todo not found');
   }
 
   const todo = doc.data();
