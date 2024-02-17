@@ -13,6 +13,12 @@ export const todo = {
     completed: {
       $ref: '#/components/schemas/todoCompleted'
     },
+    dateCreated: {
+      $ref: '#/components/schemas/todoDateCreated'
+    },
+    dateUpdated: {
+      $ref: '#/components/schemas/todoDateUpdated'
+    },
     userId: {
       $ref: '#/components/schemas/userId'
     }

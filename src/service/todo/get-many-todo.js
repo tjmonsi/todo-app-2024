@@ -1,30 +1,24 @@
+import { firestore } from '../../utils/firestore/index.js'
+
 export async function getManyTodo (request, response) {
   const { query } = request;
+
+  const collection = firestore.collection('todos');
+
+  const snapshot = await collection.orderBy('dateCreated', 'desc').get();
+  const data = snapshot.docs.map(doc => {
+    const docData = doc.data();
+    return {
+      ...docData,
+      todoId: doc.id,
+      dateCreated: docData.dateCreated.toDate().getTime(),
+      dateUpdated: docData.dateUpdated.toDate().getTime()
+    };
+  });
+
   console.log(query);
   return {
     success: true,
-    data: [
-      {
-        id: '1',
-        title: 'First Todo',
-        description: 'This is the first todo',
-        completed: false,
-        userId: 'me'
-      },
-      {
-        id: '2',
-        title: 'Second Todo',
-        description: 'This is the second todo',
-        completed: false,
-        userId: 'me'
-      },
-      {
-        id: '3',
-        title: 'Third Todo',
-        description: 'This is the third todo',
-        completed: false,
-        userId: 'me'
-      }
-    ]
+    data
   };
 }

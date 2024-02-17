@@ -1,17 +1,26 @@
+import { firestore } from '../../utils/firestore/index.js'
+
 export async function getTodo (request, response) {
   const { params } = request;
-  const { id } = params
+  const { todoId } = params
  
-  console.log(id);
+  const collection = firestore.collection('todos');
+  const doc = await collection.doc(todoId).get();
+  
+  if (!doc.exists) {
+    // return an error
+  }
+
+  const todo = doc.data();
+  const data = {
+    ...todo,
+    todoId: doc.id,
+    dateCreated: todo.dateCreated.toDate().getTime(),
+    dateUpdated: todo.dateUpdated.toDate().getTime()
+  };
   
   return {
     success: true, 
-    data: {
-      id,
-      title: 'First Todo',
-      description: 'This is the first todo',
-      completed: false,
-      userId: 'me'
-    }
+    data
   };
 }
